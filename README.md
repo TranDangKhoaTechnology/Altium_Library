@@ -1,219 +1,219 @@
 <div align="center">
 
-# altium library
+# Altium Library
 
-**professional altium designer component library for schematic and pcb design**
+**Professional Altium Designer Component Library for Schematic Capture and PCB Layout**
 
-![altium designer](https://img.shields.io/badge/altium-designer-0a66c2?style=for-the-badge)
-![pcb library](https://img.shields.io/badge/pcb-library-2ea44f?style=for-the-badge)
-![schematic library](https://img.shields.io/badge/schematic-library-6f42c1?style=for-the-badge)
-![license](https://img.shields.io/badge/license-all_rights_reserved-red?style=for-the-badge)
+![Altium Designer](https://img.shields.io/badge/Altium-Designer-0A66C2?style=for-the-badge)
+![PCB Library](https://img.shields.io/badge/PCB-Library-2EA44F?style=for-the-badge)
+![Schematic Library](https://img.shields.io/badge/Schematic-Library-6F42C1?style=for-the-badge)
+![License](https://img.shields.io/badge/License-All_Rights_Reserved-RED?style=for-the-badge)
 
-**owner:** tran dang khoa technology  
-**author:** trần đăng khoa
+**Owner:** Tran Dang Khoa Technology  
+**Author:** Trần Đăng Khoa
 
 </div>
 
 ---
 
-## overview
+## Overview
 
-`altium_library` là bộ thư viện linh kiện dành cho **altium designer**, hỗ trợ quá trình thiết kế mạch nguyên lý, layout pcb, kiểm tra footprint và chuẩn bị file sản xuất.
+**Altium Library** is a reusable component library for **Altium Designer**, built to support schematic capture, PCB layout, footprint verification, and manufacturing output preparation.
 
-repository này được xây dựng để dùng lâu dài cho các dự án điện tử, nhúng, robot, vi điều khiển, nguồn, module giao tiếp và các mạch thực hành/kỹ thuật.
-
----
-
-## features
-
-- thư viện linh kiện dùng cho **schematic** và **pcb layout**.
-- hỗ trợ các định dạng thư viện altium phổ biến như `.schlib`, `.pcblib`, `.intlib`.
-- tài liệu hướng dẫn cài đặt và thêm thư viện vào altium.
-- bảng phím tắt altium designer thường dùng khi vẽ mạch.
-- từ khóa tìm nhanh linh kiện trong thư viện.
-- hướng dẫn xuất **gerber** và **nc drill** để gửi nhà sản xuất pcb.
-- checklist kiểm tra pcb trước khi đặt mạch.
-- bản quyền rõ ràng thuộc **tran dang khoa technology**.
+This repository is intended for long-term use in electronics, embedded systems, robotics, microcontroller projects, power circuits, communication modules, and engineering practice boards.
 
 ---
 
-## repository structure
+## Key Features
+
+- Ready-to-use component libraries for **Schematic** and **PCB Layout**.
+- Support for common Altium library formats: `.SchLib`, `.PcbLib`, `.IntLib`.
+- Installation guide for adding file-based libraries into Altium Designer.
+- Essential Altium Designer shortcuts for faster schematic and PCB work.
+- Component search keywords for quick placement.
+- Gerber and NC Drill export guide for PCB manufacturing.
+- PCB manufacturing checklist before sending files to a board house.
+- Clear ownership and copyright under **Tran Dang Khoa Technology**.
+
+---
+
+## Repository Structure
 
 ```text
-altium_library/
-├── readme.md          # trang giới thiệu chính
-├── guide.md           # hướng dẫn đầy đủ cách dùng thư viện
-├── license            # thông tin bản quyền
-└── library files      # schlib, pcblib, intlib và các file liên quan
+Altium_Library/
+├── README.md          # Main project documentation
+├── guide.md           # Full usage guide, shortcuts, and export notes
+├── LICENSE            # Copyright and license notice
+└── Library Files      # SchLib, PcbLib, IntLib, and related Altium files
 ```
 
-> cấu trúc thư mục có thể thay đổi theo từng phiên bản của thư viện.
+> The folder structure may change depending on future library updates.
 
 ---
 
-## quick start
+## Quick Start
 
-### 1. clone repository
+### 1. Clone This Repository
 
 ```bash
 git clone https://github.com/TranDangKhoaTechnology/Altium_Library.git
 cd Altium_Library
 ```
 
-### 2. update library
+### 2. Update to the Latest Version
 
 ```bash
 git pull
 ```
 
-### 3. install library in altium designer
+### 3. Install the Library in Altium Designer
 
-1. mở **altium designer**.
-2. mở panel **components** hoặc **libraries**.
-3. vào phần quản lý **file-based libraries** hoặc **installed libraries**.
-4. chọn **install**.
-5. chọn file thư viện trong repository:
-   - `.intlib` cho thư viện tích hợp.
-   - `.schlib` cho symbol schematic.
-   - `.pcblib` cho footprint pcb.
-6. bấm **apply** hoặc **ok**.
-7. tìm thử linh kiện trong panel để kiểm tra.
+1. Open **Altium Designer**.
+2. Open the **Components** or **Libraries** panel.
+3. Go to **File-Based Libraries** or **Installed Libraries**.
+4. Select **Install**.
+5. Choose the library file from this repository:
+   - `.IntLib` for integrated libraries.
+   - `.SchLib` for schematic symbols.
+   - `.PcbLib` for PCB footprints.
+6. Click **Apply** or **OK**.
+7. Search for a component in the panel to confirm that the library is loaded correctly.
 
 ---
 
-## typical workflow
+## Typical Design Workflow
 
 ```mermaid
-flowchart lr
-    a[create project] --> b[add schematic]
-    b --> c[place components]
-    c --> d[wire schematic]
-    d --> e[annotate components]
-    e --> f[update pcb]
-    f --> g[set design rules]
-    g --> h[route pcb]
-    h --> i[run drc]
-    i --> j[export gerber]
+flowchart LR
+    A[Create Project] --> B[Add Schematic]
+    B --> C[Place Components]
+    C --> D[Wire Schematic]
+    D --> E[Annotate Components]
+    E --> F[Update PCB]
+    F --> G[Set Design Rules]
+    G --> H[Route PCB]
+    H --> I[Run DRC]
+    I --> J[Export Gerber]
 ```
 
-quy trình nhanh khi thiết kế:
+Recommended workflow:
 
-1. tạo project `.prjpcb`.
-2. tạo schematic `.schdoc` và pcb `.pcbdoc`.
-3. đặt linh kiện bằng `pp`.
-4. nối dây bằng `ctrl+w`.
-5. đánh số linh kiện bằng `taa`.
-6. update sang pcb bằng `du`.
-7. thiết lập luật đi dây bằng `dr`.
-8. đi dây pcb bằng `ctrl+w`.
-9. phủ đồng bằng `pg`.
-10. kiểm tra lỗi bằng `td`.
-11. xuất gerber và nc drill.
+1. Create a `.PrjPcb` project.
+2. Create schematic `.SchDoc` and PCB `.PcbDoc` files.
+3. Place components using `PP`.
+4. Wire the schematic using `Ctrl + W`.
+5. Annotate components using `TAA`.
+6. Update the PCB using `DU`.
+7. Configure design rules using `DR`.
+8. Route the PCB using `Ctrl + W`.
+9. Pour copper using `PG`.
+10. Run DRC using `TD`.
+11. Export Gerber and NC Drill files.
 
 ---
 
-## essential altium shortcuts
+## Essential Altium Shortcuts
 
-| action | shortcut |
+| Action | Shortcut |
 |---|---|
-| place component | `pp` |
-| wire / interactive routing | `ctrl+w` |
-| rotate component | `space` |
-| mirror x axis | `x` |
-| mirror y axis | `y` |
-| annotate components | `taa` |
-| update schematic to pcb | `du` |
-| design rules | `dr` |
-| design rule check | `td` |
-| polygon pour | `pg` |
-| place string/text | `ps` |
-| measure distance | `ctrl+m` |
-| switch mm/mil | `q` |
-| 2d view | `2` |
-| 3d view | `3` |
-| fit board view | `vf` |
-| bottom view | `vb` |
-| single layer mode | `shift+s` |
+| Place Component | `PP` |
+| Wire / Interactive Routing | `Ctrl + W` |
+| Rotate Component | `Space` |
+| Mirror on X Axis | `X` |
+| Mirror on Y Axis | `Y` |
+| Annotate Components | `TAA` |
+| Update Schematic to PCB | `DU` |
+| Design Rules | `DR` |
+| Design Rule Check | `TD` |
+| Polygon Pour | `PG` |
+| Place String / Text | `PS` |
+| Measure Distance | `Ctrl + M` |
+| Switch mm / mil | `Q` |
+| 2D View | `2` |
+| 3D View | `3` |
+| Fit Board View | `VF` |
+| Bottom View | `VB` |
+| Single Layer Mode | `Shift + S` |
 
-xem bảng đầy đủ trong file [guide.md](guide.md).
+See the full shortcut list in [guide.md](guide.md).
 
 ---
 
-## component search keywords
+## Component Search Keywords
 
-| component | keyword |
+| Component | Keyword |
 |---|---|
-| resistor | `r`, `res` |
-| resistor network | `rn` |
-| capacitor polarized | `cap p` |
-| capacitor non-polarized | `cap n` |
-| inductor | `l-` |
-| diode | `diode` |
-| led | `led` |
-| transistor npn | `npn` |
-| transistor pnp | `pnp` |
-| relay | `relay` |
-| connector/header | `head`, `con` |
-| switch/button | `sw` |
-| crystal | `cry` |
-| battery | `bat` |
-| 8051 mcu | `at89xxx` |
-| avr mcu | `atmegaxxx` |
-| pic mcu | `picxxx` |
-| stm mcu | `stmxxx` |
+| Resistor | `R`, `RES` |
+| Resistor Network | `RN` |
+| Polarized Capacitor | `CAP P` |
+| Non-Polarized Capacitor | `CAP N` |
+| Inductor | `L-` |
+| Diode | `DIODE` |
+| LED | `LED` |
+| NPN Transistor | `NPN` |
+| PNP Transistor | `PNP` |
+| Relay | `RELAY` |
+| Connector / Header | `HEAD`, `CON` |
+| Switch / Button | `SW` |
+| Crystal | `CRY` |
+| Battery | `BAT` |
+| 8051 MCU | `AT89XXX` |
+| AVR MCU | `ATMEGAXXX` |
+| PIC MCU | `PICXXX` |
+| STM MCU | `STMXXX` |
 
 ---
 
-## gerber export checklist
+## Gerber Export Checklist
 
-trước khi gửi pcb đi sản xuất, nên kiểm tra:
+Before sending a PCB to manufacturing, check the following items:
 
-- footprint đúng với datasheet thực tế.
-- hướng chân số 1 của ic, diode, led, tụ hóa và connector.
-- rule clearance, độ rộng dây nguồn, dây tín hiệu và khoảng cách an toàn.
-- board outline và keep-out layer.
-- silk screen không đè lên pad.
-- đã chạy drc bằng `td`.
-- đã xuất đủ gerber và nc drill.
-- đã mở lại bằng gerber viewer để kiểm tra kích thước, số lớp và lỗ khoan.
+- Footprints match the real component datasheets.
+- Pin 1 orientation is correct for ICs, diodes, LEDs, polarized capacitors, and connectors.
+- Clearance rules, power trace width, signal trace width, and spacing are correct.
+- Board outline and Keep-Out layer are correct.
+- Silkscreen does not overlap exposed pads.
+- DRC has been run using `TD`.
+- Gerber and NC Drill files have been exported.
+- The exported files have been checked in a Gerber viewer.
 
-đường dẫn xuất gerber trong altium:
+Altium Designer export paths:
 
 ```text
-file > fabrication outputs > gerber files
-file > fabrication outputs > nc drill files
+File > Fabrication Outputs > Gerber Files
+File > Fabrication Outputs > NC Drill Files
 ```
 
 ---
 
-## documentation
+## Documentation
 
-| document | description |
+| Document | Description |
 |---|---|
-| [guide.md](guide.md) | hướng dẫn đầy đủ cách cài, dùng thư viện, phím tắt, tìm linh kiện và xuất gerber |
-| [license](LICENSE) | thông tin bản quyền repository |
+| [guide.md](guide.md) | Complete installation guide, usage notes, shortcuts, component keywords, and Gerber export steps |
+| [LICENSE](LICENSE) | Copyright and license notice |
 
 ---
 
-## recommended usage
+## Recommended Usage
 
-- nên đặt thư viện trong một thư mục cố định, tránh đổi đường dẫn sau khi đã thêm vào altium.
-- nên kiểm tra footprint trước khi đặt pcb thật.
-- với linh kiện smd nhỏ, nên đối chiếu lại kích thước pad với datasheet.
-- với project quan trọng, nên lưu một bản thư viện theo từng phiên bản dự án.
-- không nên sửa trực tiếp footprint đang dùng trong nhiều project nếu chưa kiểm tra ảnh hưởng.
-
----
-
-## author
-
-**tran dang khoa technology**  
-created and maintained by **trần đăng khoa**.
+- Keep the library in a fixed folder path to avoid broken Altium library links.
+- Always verify footprints before ordering real PCBs.
+- For small SMD components, compare pad dimensions with the datasheet.
+- For important projects, keep a project-specific copy of the library version used.
+- Avoid editing shared footprints directly unless the impact on existing projects is checked.
 
 ---
 
-## license
+## Author
 
-copyright © 2026 **trần đăng khoa / trandangkhoatechnology**. all rights reserved.
+**Tran Dang Khoa Technology**  
+Created and maintained by **Trần Đăng Khoa**.
 
-repository này thuộc quyền sở hữu của **trần đăng khoa / trandangkhoatechnology**. không được sao chép, phân phối lại, bán lại, chỉnh sửa để phát hành lại hoặc sử dụng thương mại nếu chưa được cho phép bằng văn bản.
+---
+
+## License
+
+Copyright © 2026 **Trần Đăng Khoa / TranDangKhoaTechnology**. All Rights Reserved.
+
+This repository is the property of **Trần Đăng Khoa / TranDangKhoaTechnology**. Copying, redistributing, reselling, republishing, modifying for redistribution, or using this repository for commercial purposes without written permission is not allowed.
